@@ -1,0 +1,50 @@
+PRINCIPLES OF RESTAPI
+1. Client-Server Architecture
+Principle: Clear separation between the client (who makes the request) and the server (who provides the service).
+Analogy:
+Client: You, the person who wants to borrow a book.
+Server: The library that provides the books.
+Scenario:
+You go to the library (server) to borrow a book. You (client) request a book, and the library provides it. The roles of client and server are clearly defined.
+
+2. Statelessness
+Principle: Each request from the client to the server must contain all the information needed to understand and process the request. The server doesn't remember any past interactions with the client.
+Analogy:
+Every time you borrow a book, you must present your library card and request form, even if you’ve borrowed books before.
+Scenario:
+Each time you go to the library, you provide your library card and the details of the book you want to borrow. The library doesn't keep track of your past visits, so it treats each request as new, requiring all necessary details each time.
+3. Cacheability
+Principle: Responses should indicate whether they can be stored (cached) by the client for future use to improve efficiency.Responses must define themselves as cacheable or non-cacheable to prevent clients from reusing stale or inappropriate data.
+Analogy:
+The library gives you a bookmark (cached response) with your borrowing history and due dates.
+Scenario:
+When you borrow a book, the library gives you a bookmark with your borrowing history and due dates. This helps you keep track of your books without asking the library each time.
+4. Uniform Interface
+Principle: There should be a standardized way to communicate between the client and server.The uniform interface simplifies and decouples the architecture, which enables each part to evolve independently.
+Key Aspects:
+Identification of Resources: Resources are identified in requests using URIs.
+Analogy: Think of resources as specific books in the library. Each book has a unique identifier, like a catalog number or ISBN.
+REST Example: Resources are identified using URIs (Uniform Resource Identifiers).
+Example: GET /books/1234 retrieves the book with ID 1234.
+Library Example: You look up a book with catalog number 1234 in the library's online catalog.
+
+Manipulation of Resources through Representations: Clients interact with resources using representations.
+
+Library Example: You ask the librarian to update the details of book 1234 to "New Book Title" by John Doe.
+Analogy: Each interaction with the librarian includes all the necessary information.
+REST Example: Each message contains enough information to understand how to process it, often using HTTP headers.
+Example: Content-Type: application/json in the headers tells the server that the body content is in JSON format.
+Library Example: When you hand over a request form to the librarian, it clearly states the type of request (e.g., "book update") and includes all relevant details (e.g., new title and author).
+Self-Descriptive Messages: Each message includes enough information to describe how to process the message.
+Example: HTTP headers like Content-Type: application/json indicate the type of the body content.
+
+Analogy:
+The library has a standard form (uniform interface) that you use to request books.
+Scenario:
+You always use the same form to request a book, whether you submit it online, by phone, or in person. The form remains the same, providing a consistent way to understand and request items.
+5. Layered System
+Principle: The system is organized in layers, and each layer has a specific function without knowing the details of other layers.
+Analogy:
+The restaurant has different layers: the person taking your order, the chef making the pizza, and the delivery person bringing the pizza to you.
+Scenario:
+When you order a pizza, the order taker doesn't need to know how the pizza is made or delivered. They just pass your order to the chef, who then passes it to the delivery person. Each person performs their role without needing to know the entire process.
